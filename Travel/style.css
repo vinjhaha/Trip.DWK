@@ -11,7 +11,7 @@ html {
     margin: auto;
 }
 nav{
-    z-index: 100px;
+    z-index: 100;
     color: #fff;
     text-align: center;
     position: fixed;
@@ -54,9 +54,13 @@ nav .menu ul li {
     line-height: 60px; 
 }
 
-nav .ul li a {
+nav ul li a {
     color: #fff;
     text-align: center;
-    padding: 16px 16px 16px 16px;
+    padding: 0px 16px 0px 16px;
     text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration:underline;
 }

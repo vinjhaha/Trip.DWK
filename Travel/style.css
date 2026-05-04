@@ -4,11 +4,21 @@
     font-size: 15px;
 }
 html {
+    margin: 0;
+    padding: 0;
     background-color: #dedede;
+}
+body {
+    margin: 0px;
+    padding: 0px;
 }
 .layar-dalam{
     width: 1000px;
     margin: auto;
+}
+.layar-penuh {
+    width: 100%;
+
 }
 nav{
     z-index: 100;
@@ -63,4 +73,20 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration:underline;
+}
+
+/* pengaturan header */
+header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
 }

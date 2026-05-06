@@ -83,10 +83,67 @@ header {
     overflow: hidden;
     z-index: 2;
 }
-header video {
+header video{
     position: absolute;
     top: 0;
     left: 0;
     object-fit: cover;
-    z-index: -2;
+}
+header .Intro{
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+header .Intro h3{
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+}
+.tombol {
+    background-color: chocolate;
+    height: 40px;
+    line-height: 42px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 50%; 
+    z-index: -1;
+}
+.tombol-menu {
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+.tombol-menu .garis {
+    height: 3px;
+    background-color: #fff;
+}
+@media screen and (max-width: 991.98px) {
+    .layar-dalam {
+        width: 90%;
+    }
+    nav .menu ul {
+        display: none;
+    }
+    .tombol-menu {
+        display: flex;
+
+    }
 }

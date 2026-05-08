@@ -1,9 +1,9 @@
 //menu
-var tombolmenu = $(".tombol-menu");
-var menu = $("nav .menu ul");
+var tombolMenu = $(".tombol-menu");
+var menu = $("nav .menu ul"); 
 
-function klikmenu() {
-    tombolmenu.click(function () {
+function klikMenu() {
+    tombolMenu.click(function () {
         menu.toggle();
     });
     menu.click(function() {
@@ -13,6 +13,11 @@ function klikmenu() {
 $(document).ready(function (){
     var width = $(window).width();
     if (width < 990){
-        klikmenu();
+        klikMenu();
     }
+})
+
+//check lebar
+$(window).resize(function(){
+    
 })

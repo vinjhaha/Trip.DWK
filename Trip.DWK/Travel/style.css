@@ -141,6 +141,20 @@ header .overlay {
     }
     nav .menu ul {
         display: none;
+        margin-top: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    nav .menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #CCC;
+        background-color: #FFF;
+        line-height: 40px;
+    }
+    nav .menu ul li a {
+        color: #333;
     }
     .tombol-menu {
         display: flex;

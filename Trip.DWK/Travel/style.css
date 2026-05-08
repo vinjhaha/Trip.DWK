@@ -89,14 +89,14 @@ header video{
     left: 0;
     object-fit: cover;
 }
-header .Intro{
+header .intro{
     z-index: 100;
     color: #fff;
     text-align: center;
     position: relative;
     top: 50%;
 }
-header .Intro h3{
+header .intro h3{
     font-size: 50px;
     margin: 0;
     padding: 0;

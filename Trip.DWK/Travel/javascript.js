@@ -19,5 +19,12 @@ $(document).ready(function (){
 
 //check lebar
 $(window).resize(function(){
-    
+    var width = $(window).width();
+    if(width > 989){
+        menu.css("display","block");
+        //display:block
+    }else{
+        menu.css("display","none");
+    }
+    klikMenu();
 })

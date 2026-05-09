@@ -7,6 +7,7 @@ html {
     margin: 0;
     padding: 0;
     background-color: #dedede;
+    scroll-behavior: smooth;
 }
 body {
     margin: 0px;
@@ -28,6 +29,7 @@ nav{
     border-bottom:1px solid #b1b1b1 ;
     line-height: 60px;
     width: 100%;
+    transition: background-color 0.5s ease;
 }
 nav.putih{
     background-color: #fff;
@@ -88,6 +90,7 @@ header video{
     top: 0;
     left: 0;
     object-fit: cover;
+    z-index: -2;
 }
 header .Intro{
     z-index: 100;
@@ -134,6 +137,43 @@ header .overlay {
 .tombol-menu .garis {
     height: 3px;
     background-color: #fff;
+}
+section {
+    padding: 50px 0px 50px 0px;
+
+}
+section h3 {
+    font-size: 30px;
+}
+section h3::after {
+    content: "";
+    border-bottom: 5px solid #d2691e;
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+
+}
+#aboutus {
+    text-align: center;
+}
+section p.ringkasan {
+    font-style: italic;
+    font-size: 18px;
+    color: #ababab;
+
+}
+section .konten-isi p {
+        font-style: normal;
+}
+nav .putih {
+    background-color: #FFF;
+
+}
+nav.putih ul li a {
+    color: #333;
+}
+nav .putih .tombol-menu .garis {
+    background-color: #333;
 }
 @media screen and (max-width: 991.98px) {
     .layar-dalam {

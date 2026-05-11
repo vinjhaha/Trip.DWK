@@ -34,6 +34,9 @@ nav{
 nav.putih{
     background-color: #fff;
 }
+nav.putih .tombol-menu .garis {
+    background-color: #333;
+}
 
 nav .logo{
     float: left;
@@ -92,14 +95,14 @@ header video{
     object-fit: cover;
     z-index: -2;
 }
-header .intro{
+header .Intro {
     z-index: 100;
     color: #fff;
     text-align: center;
     position: relative;
     top: 50%;
 }
-header .intro h3{
+header .Intro h3{
     font-size: 50px;
     margin: 0;
     padding: 0;

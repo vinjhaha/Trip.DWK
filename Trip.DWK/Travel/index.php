@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['login'])){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +48,11 @@
                 blablabla
             </p>
             <p>
-                <a href="" class="tombol">LOGIN</a>
+            <?php if(!isset($_SESSION['login'])){ ?>
+                <a href="login.php" class="tombol">LOGIN</a>
+                     <?php } else { ?>
+                <a href="logout.php" class="tombol">LOGOUT</a>
+             <?php } ?>
             </p>
         </div>
     </header>

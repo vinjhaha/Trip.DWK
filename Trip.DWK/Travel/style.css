@@ -31,10 +31,10 @@ nav{
     width: 100%;
     transition: background-color 0.5s ease;
 }
-nav.putih{
+nav.Putih{
     background-color: #fff;
 }
-nav.putih .tombol-menu .garis {
+nav.Putih .tombol-menu .garis {
     background-color: #333;
 }
 
@@ -74,6 +74,7 @@ nav ul li a {
     text-align: center;
     padding: 0px 16px 0px 16px;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -170,16 +171,16 @@ section p.ringkasan {
 section .konten-isi p {
         font-style: normal;
 }
-nav .putih {
+nav .Putih {
     background-color: #FFF;
 }
-nav.putih ul li a {
+nav.Putih .menu ul li a {
     color: #333;
 }
 nav .putih .tombol-menu .garis {
     background-color: #333;
-}
-nav .logo img.hitam {
+} 
+nav .logo img.Hitam {
     display: none;
 }
 section.abuabu {

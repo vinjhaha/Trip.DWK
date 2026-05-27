@@ -18,7 +18,8 @@ if(!isset($_SESSION['login'])){
     <nav>
         <div class="layar-dalam"></div></div>
         <div class="logo">
-            <a href="">><img src="asset/DWKTrip.png"class="Putih"></a>
+            <a href=""><img src="asset/DWK_PUTIH.png" class="Putih" /></a>
+            <a href=""><img src="asset/dwk_hitam.png" class="Hitam" /></a>
         </div></div>
         <div class="menu">
             <a href="#" class="tombol-menu">
@@ -27,11 +28,11 @@ if(!isset($_SESSION['login'])){
             <span class="garis"></span>
             </a>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#aboutus">About Us</a></li>
-                <li><a href="testimoni">Testimoni</a></li>
-                <li><a href="contactus">Contact Us</a></li>
-                <li><a href="trip">Trip</a></li>
+                 <li><a href="#home">Home</a></li>
+                 <li><a href="#aboutus">About Us</a></li>
+                 <li><a href="#Team">Testimoni</a></li>
+                 <li><a href="#contact">Contact Us</a></li>
+                 <li><a href="#blog">Trip</a></li>
             </ul>
         </div>
     </div>
@@ -45,7 +46,7 @@ if(!isset($_SESSION['login'])){
         <div class="Intro">
             <h3>Visit DWK-Trip</h3>
             <p>
-                blablabla
+                Platform digital untuk menemukan dan memesan open trip dengan mudah, aman, dan terorganisir.
             </p>
             <p>
             <?php if(!isset($_SESSION['login'])){ ?>
@@ -60,12 +61,12 @@ if(!isset($_SESSION['login'])){
         <section id="aboutus">
             <div class="layar-dalam">
                 <h3>About Us</h3>
-                <p class="ringkasan">ngebkp yuk
+                <p class="ringkasan">Platform digital yang menghubungkan penyedia jasa open trip terpercaya dengan para traveler. Kami hadir untuk memastikan perjalanan wisata Anda lebih mudah, terorganisir, dan menyenangkan tanpa perlu pusing mengatur detailnya sendiri.
 
                 </p>
                 <div class="konten-isi">
                     <p>
-                        yuk gas ngebkp
+                       Nikmati Pengalaman Liburan yang Berbeda
                     </p>
                 </div>
             </div>
@@ -77,7 +78,10 @@ if(!isset($_SESSION['login'])){
                     <img src="asset/matahari.png"/>
                     <h6>In Every Condition</h6>
                     <p>
-                       odading 
+                       Menemukan paket open trip
+Memesan perjalanan secara online
+Bergabung dengan traveler lain
+Menikmati liburan dengan aman dan praktis
                 </div>
                 <div>
                     <img src="asset/tas.png" />
@@ -107,13 +111,13 @@ if(!isset($_SESSION['login'])){
         </section>
         <section class="quote">
             <div class="layar-dalam">
-                <p>Jogja terbuat dari rindu, pulang dan angkringan.</p>
+                <p>Jangan biarkan rencana liburanmu hanya jadi wacana. Wujudkan sekarang bersama Trip.DWK!</p>
             </div>
         </section>
         <section id="Team">
             <div class="layar-dalam">
                 <h3>Our Team</h3>
-                <p class="ringkasan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eius illum nihil eos quia. Sapiente.
+                <p class="ringkasan">Tim kami memiliki guide yang berpengalaman dalam menjaga kenyamanan traveler
                 </p>
                 <div class="tim">
                     <div>
@@ -142,24 +146,24 @@ if(!isset($_SESSION['login'])){
         <section class="abuabu" id="blog">
             <div class="layar-dalam">
                 <h3>Latest Blog</h3>
-                <p class="ringkasan">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, vero et. Sint quia magni odit.
+                <p class="ringkasan">Temukan inspirasi perjalanan, tips esensial, dan cerita seru dari destinasi impianmu sebelum mulai melangkah.
                 </p>
                 <div class="blog">
                     <div class="area">
-                        <div class="gambar" style="background-image: url('asset/blog1.jpg');"></div>
+                        <div class="gambar" style="background-image: url('asset/pexels-ilham-zovanka-2158121497-35383079.jpg');"></div>
                         <div class="text">
                             <article>
                                 <h4><a href="#">What About Bromo?</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias numquam aut libero.</p>
+                                <p>Siap terpukau oleh magisnya matahari terbit di atas lautan pasir Bromo? Simak panduan lengkap, rute terbaik, dan persiapan wajib sebelum kamu berangkat!</p>
                             </article>
                         </div>
                     </div>
                     <div class="area">
-                        <div class="gambar" style="background-image: url('asset/blog2.jpg');"></div>
+                        <div class="gambar" style="background-image: url('asset/pexels-wictor-sparrow-2158142269-35232880.jpg');"></div>
                         <div class="text">
                             <article>
                                 <h4><a href="#">What About Yogyakarta?</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias numquam aut libero.</p>
+                                <p>Yogyakarta bukan cuma soal Malioboro. Temukan rekomendasi wisata alam tersembunyi dan kuliner legendaris yang wajib masuk daftar liburanmu selanjutnya!</p>
                             </article>
                         </div>
                     </div>
@@ -171,7 +175,7 @@ if(!isset($_SESSION['login'])){
         <div class="layar-dalam">
             <div>
                 <h5>Info</h5>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem inventore officiis voluptatem? Reiciendis, velit eveniet.
+                Trip.Dwk adalah penyedia layanan paket wisata terpercaya yang siap menemani petualangan serumu mengeksplorasi keindahan alam, budaya, dan destinasi terbaik di Indonesia.
             </div>
             <div>
                 <h5>Contact</h5>
@@ -182,11 +186,11 @@ if(!isset($_SESSION['login'])){
             </div>
             <div>
                 <h5>Help</h5>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem inventore officiis voluptatem? Reiciendis, velit eveniet.
+              Kalo Butuh bantuan bisa hubungin kontak di samping kiri ini ya, kami akan sedia Membantu
             </div>
             <div>
                 <h5>Sitemap</h5>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem inventore officiis voluptatem? Reiciendis, velit eveniet.
+                Home, About Us, Testimoni, Contact Us, Trip
             </div>
         </div>
         <div class="layar-dalam">

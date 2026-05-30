@@ -149,20 +149,20 @@ Menikmati liburan dengan aman dan praktis
         <p class="ringkasan">Apa kata mereka tentang Trip.DWK?</p>
         <div class="testimoni">
             <div class="testi-card">
-                <img src="asset/yonber3.jpg" class="testi-foto">
-                <h6>Garry Ang</h6>
+                <img src="asset/fiersa besari.jpg" class="testi-foto">
+                <h6>Fiersa Besari</h6>
                 <div class="bintang">★★★★★</div>
                 <p>"Trip yang luar biasa! Semua terorganisir dengan baik, pemandangannya indah banget!"</p>
             </div>
             <div class="testi-card">
-                <img src="asset/ikraam kembang.jpg" class="testi-foto">
-                <h6>Zulqa Mahendra</h6>
+                <img src="asset/Nadia Putri.png" class="testi-foto">
+                <h6>Nadia Putri</h6>
                 <div class="bintang">★★★★☆</div>
                 <p>"Pengalaman liburan yang tak terlupakan, guide-nya profesional dan ramah!"</p>
             </div>
             <div class="testi-card">
-                <img src="asset/tempuk2.jpg" class="testi-foto">
-                <h6>Tangguh Setiaji</h6>
+                <img src="asset/Dinda Ayu.png" class="testi-foto">
+                <h6>Dinda Ayu</h6>
                 <div class="bintang">★★★★★</div>
                 <p>"Recommended banget! Harga terjangkau tapi kualitas tidak mengecewakan!"</p>
             </div>

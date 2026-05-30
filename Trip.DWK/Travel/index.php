@@ -143,33 +143,32 @@ Menikmati liburan dengan aman dan praktis
                 </div>
             </div>
         </section>
-        <section class="abuabu" id="blog">
-            <div class="layar-dalam">
-                <h3>Latest Blog</h3>
-                <p class="ringkasan">Temukan inspirasi perjalanan, tips esensial, dan cerita seru dari destinasi impianmu sebelum mulai melangkah.
-                </p>
-                <div class="blog">
-                    <div class="area">
-                        <div class="gambar" style="background-image: url('asset/pexels-ilham-zovanka-2158121497-35383079.jpg');"></div>
-                        <div class="text">
-                            <article>
-                                <h4><a href="#">What About Bromo?</a></h4>
-                                <p>Siap terpukau oleh magisnya matahari terbit di atas lautan pasir Bromo? Simak panduan lengkap, rute terbaik, dan persiapan wajib sebelum kamu berangkat!</p>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="area">
-                        <div class="gambar" style="background-image: url('asset/pexels-wictor-sparrow-2158142269-35232880.jpg');"></div>
-                        <div class="text">
-                            <article>
-                                <h4><a href="#">What About Yogyakarta?</a></h4>
-                                <p>Yogyakarta bukan cuma soal Malioboro. Temukan rekomendasi wisata alam tersembunyi dan kuliner legendaris yang wajib masuk daftar liburanmu selanjutnya!</p>
-                            </article>
-                        </div>
-                    </div>
-                </div>
+      <section class="abuabu" id="blog">
+    <div class="layar-dalam">
+        <h3>Testimoni</h3>
+        <p class="ringkasan">Apa kata mereka tentang Trip.DWK?</p>
+        <div class="testimoni">
+            <div class="testi-card">
+                <img src="asset/yonber3.jpg" class="testi-foto">
+                <h6>Garry Ang</h6>
+                <div class="bintang">★★★★★</div>
+                <p>"Trip yang luar biasa! Semua terorganisir dengan baik, pemandangannya indah banget!"</p>
             </div>
-        </section>
+            <div class="testi-card">
+                <img src="asset/ikraam kembang.jpg" class="testi-foto">
+                <h6>Zulqa Mahendra</h6>
+                <div class="bintang">★★★★☆</div>
+                <p>"Pengalaman liburan yang tak terlupakan, guide-nya profesional dan ramah!"</p>
+            </div>
+            <div class="testi-card">
+                <img src="asset/tempuk2.jpg" class="testi-foto">
+                <h6>Tangguh Setiaji</h6>
+                <div class="bintang">★★★★★</div>
+                <p>"Recommended banget! Harga terjangkau tapi kualitas tidak mengecewakan!"</p>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
     <footer id="contact">
         <div class="layar-dalam">

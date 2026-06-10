@@ -6,18 +6,18 @@ $pesan = "";
 
 if(isset($_POST['login'])){
 
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     // Cek apakah email terdaftar dulu
-    $cekEmail = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
+    $cekUsername = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
     
-    if(mysqli_num_rows($cekEmail) == 0){
+    if(mysqli_num_rows($cekUsername) == 0){
         // Email tidak ditemukan
-        $pesan = "<p style='color:red;'>Email belum terdaftar! Silahkan <a href='register.php'>Register</a> dulu.</p>";
+        $pesan = "<p style='color:red;'>Username belum terdaftar! Silahkan <a href='register.php'>Register</a> dulu.</p>";
     } else {
         // Email ada, cek password
-        $cekPassword = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' AND password='$password'");
+        $cekPassword = mysqli_query($conn, "SELECT * FROM users WHERE username='$username' AND password='$password'");
         
         if(mysqli_num_rows($cekPassword) > 0){
             $_SESSION['login'] = true;
@@ -78,7 +78,7 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
-    background-image: url('asset/background-bromo.jpg');
+    background-image: url('asset/pantai.kapal.bening.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@ body{
 
 <form method="POST">
 
-<input type="email" name="email" placeholder="Email" required>
+<input type="username" name="username" placeholder="Username" required>
 
 <input type="password" name="password" placeholder="Password" required>
 

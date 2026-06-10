@@ -1,4 +1,4 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 20px;
     font-size: 15px;
@@ -13,101 +13,203 @@ body {
     margin: 0px;
     padding: 0px;
 }
-.layar-dalam{
+.layar-dalam {
     width: 1000px;
     margin: auto;
 }
-.layar-penuh {
-    width: 100%;
 
-}
-nav{
-    z-index: 100;
-    color: #fff;
-    text-align: center;
+/* ===================== NAVBAR ===================== */
+nav {
+    z-index: 1000;
     position: fixed;
-    border-bottom:1px solid #b1b1b1 ;
-    line-height: 60px;
+    top: 0;
+    left: 0;
     width: 100%;
-    transition: background-color 0.5s ease;
-}
-nav.Putih{
-    background-color: #fff;
-}
-nav.Putih .tombol-menu .garis {
-    background-color: #333;
+    height: 65px;
+    line-height: 65px;
+    background-color: transparent; /* transparan saat di home */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    box-sizing: border-box;
 }
 
-nav .logo{
+/* Saat scroll → putih */
+nav.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+nav .logo {
     float: left;
-    position: relative;
-    line-height: 55px;
-    text-align: center;
+    padding-left: 20px;
+    line-height: 65px;
 }
-
-nav .logo img{
+nav .logo img {
     vertical-align: middle;
-    width: 120px;
+    width: 180px; /* ganti dari 130px → 180px */
 }
 
-nav .menu{
+/* Shadow logo saat scroll lebih jelas */
+nav.scrolled .logo img {
+    filter: drop-shadow(0px 0px 6px rgba(0,0,0,0.8));
+}
+
+/* Menu */
+nav .menu {
     float: right;
-    height: 60px;
-    max-width: 600px;
+    height: 65px;
 }
-
 nav .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
-
 nav .menu ul li {
-    list-style-type: none;
     float: left;
-    line-height: 60px; 
+    line-height: 65px;
 }
 
+/* Link putih saat transparan */
 nav ul li a {
-    color: #fff;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
+    color: #ffffff;
+    padding: 0px 16px;
     text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
     transition: color 0.3s ease;
+    text-shadow: 0px 1px 4px rgba(0,0,0,0.7);
 }
-
 nav ul li a:hover {
-    text-decoration:underline;
+    color: #f0c080;
 }
 
-/* pengaturan header */
+/* Link gelap saat scrolled */
+nav.scrolled ul li a {
+    color: #333333;
+    text-shadow: none;
+}
+nav.scrolled ul li a:hover {
+    color: chocolate;
+}
+
+/* ===================== HAMBURGER ===================== */
+.tombol-menu {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.tombol-menu .garis {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 3px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+nav.scrolled .tombol-menu .garis {
+    background-color: #333333;
+}
+
+/* ===================== SLIDESHOW / HEADER ===================== */
 header {
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    z-index: 2;
 }
-header video{
+
+.slideshow-container {
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover;
-    z-index: -2;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+.slide.active {
+    opacity: 1;
+}
+
+/* Overlay gelap biar teks terbaca */
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* Teks tengah header */
 header .Intro {
-    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
     color: #fff;
     text-align: center;
-    position: relative;
-    top: 50%;
+    width: 90%;
 }
-header .Intro h3{
+header .Intro h3 {
     font-size: 50px;
-    margin: 0;
+    margin: 0 0 15px 0;
     padding: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
+header .Intro p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Dot indicator */
+.slide-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.8);
+}
+.dot.active {
+    background-color: #ffffff;
+}
+
+/* ===================== TOMBOL ===================== */
 .tombol {
     background-color: chocolate;
     height: 40px;
@@ -115,36 +217,20 @@ header .Intro h3{
     color: #fff;
     text-decoration: none;
     display: inline-block;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 24px;
     font-size: 15px;
     border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
 }
-header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 50%; 
-    z-index: -1;
+.tombol:hover {
+    background-color: #a0522d;
 }
-.tombol-menu {
-    position: absolute;
-    top: 1.7rem;
-    right: 1rem;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-}
-.tombol-menu .garis {
-    height: 3px;
-    background-color: #fff;
-}
-section {
-    padding: 50px 0px 50px 0px;
 
+/* ===================== SECTION UMUM ===================== */
+section {
+    padding: 50px 0px;
 }
 section h3 {
     font-size: 30px;
@@ -155,10 +241,9 @@ section h3::after {
     width: 52px;
     display: block;
     margin: 20px auto;
-
 }
 #aboutus,
-#team, 
+#Team,
 #blog {
     text-align: center;
 }
@@ -166,34 +251,22 @@ section p.ringkasan {
     font-style: italic;
     font-size: 18px;
     color: #ababab;
-
 }
 section .konten-isi p {
-        font-style: normal;
-}
-nav .Putih {
-    background-color: #FFF;
-}
-nav.Putih .menu ul li a {
-    color: #333;
-}
-nav .putih .tombol-menu .garis {
-    background-color: #333;
-} 
-nav .logo img.Hitam {
-    display: none;
+    font-style: normal;
 }
 section.abuabu {
     background-color: #f5f6f6;
 }
-.support, 
-.tim, 
-.blog {
+
+/* ===================== SUPPORT ===================== */
+.support,
+.tim {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.support h6, 
+.support h6,
 .tim h6 {
     margin: 0px;
     margin-top: 20px;
@@ -204,17 +277,20 @@ section.abuabu {
 .support img {
     width: 50px;
 }
-.support div, 
+.support div,
 .tim div {
     text-align: center;
     width: 26%;
 }
+
+/* ===================== GALLERY ===================== */
 section#gallery {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     overflow: hidden;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0px;
+    background-color: #fff;
 }
 section#gallery div {
     padding: 10px;
@@ -227,13 +303,15 @@ section#gallery div img:hover {
     transition: all 0.2s ease-in-out;
     transform: scale(1.1);
 }
+
+/* ===================== QUOTE ===================== */
 section.quote {
-    background:url('asset/background-bromo.jpg') no-repeat;
+    background: url('asset/pantai.ada.gunung.jpg') no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     text-align: center;
-    color: #FFF;
+    color: #fff;
     font-size: 20px;
     font-style: italic;
     padding: 100px;
@@ -243,45 +321,66 @@ section.quote .layar-dalam p {
     background: url(asset/quote-icon.png) no-repeat;
     padding: 40px;
 }
+
+/* ===================== TIM ===================== */
 .tim img {
     width: 90%;
-    box-shadow: 0px -10px 30px #CCC;
+    box-shadow: 0px -10px 30px #ccc;
     border-radius: 5px;
 }
-.blog .area {
-    width: 47%;
-    box-shadow: 0px -10px 30px #CCC;
-    border-radius: 5px;
+
+/* ===================== TESTIMONI ===================== */
+.testimoni {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 80px;
+    gap: 20px;
 }
-.blog div.area div {
-    width: 50%;
+.testi-card {
+    background-color: #222;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 30%;
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
 }
-.blog .area .gambar {
-    border-radius: 5px 0px 5px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 300px;
+.testi-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
-.blog .area .text article {
-    padding: 40px;
+.testi-card h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
-.blog .area .text article h4 {
-    margin: 0px;
+.bintang {
+    color: #f5a623;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-.blog .area .text article a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.5s ease;
+.testi-card p {
+    font-style: italic;
+    font-size: 13px;
+    color: #ccc;
+    line-height: 22px;
 }
-.blog .area .text article a:hover {
-    color: #dedede;
-}
+
+/* ===================== FOOTER ===================== */
 footer {
-    padding: 50px 0px 50px 0px;
+    padding: 50px 0px;
     background-color: #343a40;
     color: #fff;
 }
@@ -296,7 +395,7 @@ footer .layar-dalam div {
 footer .layar-dalam h5 {
     margin-top: 0px;
     font-size: 20px;
-    font-weight:  bold;
+    font-weight: bold;
 }
 footer .layar-dalam .copyright {
     width: 100%;
@@ -305,110 +404,106 @@ footer .layar-dalam .copyright {
     border-top: 1px solid #666;
     text-align: center;
 }
-/* Testimoni */
-.testimoni {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 80px;
-    gap: 20px;
-}
 
-.testi-card {
-    background-color: #222;
-    color: #fff;
-    border-radius: 10px;
-    padding: 30px 20px;
-    width: 30%;
-    text-align: center;
-    position: relative;
-    padding-top: 80px;
-}
-
-.testi-foto {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 4px solid #fff;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
-}
-
-.testi-card h6 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 0 5px 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.bintang {
-    color: #f5a623;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.testi-card p {
-    font-style: italic;
-    font-size: 13px;
-    color: #ccc;
-    line-height: 22px;
-}
-
-/* Responsive testimoni */
+/* ===================== RESPONSIVE HP ===================== */
 @media screen and (max-width: 991.98px) {
+    .layar-dalam {
+        width: 90%;
+    }
+
+    /* Hamburger aktif */
+    .tombol-menu {
+        display: flex;
+    }
+
+    /* Menu dropdown */
+    nav .menu ul {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    nav .menu ul.aktif {
+        display: flex;
+    }
+    nav .menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #eeeeee;
+        line-height: 48px;
+        float: none;
+    }
+    nav .menu ul li a {
+        color: #333333;
+        text-shadow: none;
+        display: block;
+        padding: 0 20px;
+        font-size: 15px;
+    }
+    nav .menu ul li a:hover {
+        background-color: #f5f5f5;
+        color: chocolate;
+    }
+
+    /* Header HP */
+    header .Intro h3 {
+        font-size: 30px;
+    }
+    header .Intro p {
+        font-size: 14px;
+    }
+
+    /* Testimoni */
     .testimoni {
         flex-direction: column;
         align-items: center;
     }
     .testi-card {
-        width: 80%;
+        width: 85%;
         margin-bottom: 70px;
     }
-}
-@media screen and (max-width: 991.98px) {
-    .layar-dalam {
-        width: 90%;
-    }
-    nav .menu ul {
-        display: none;
-        margin-top: 60px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-    nav .menu ul li {
-        width: 100%;
-        border-bottom: 1px solid #CCC;
-        background-color: #FFF;
-        line-height: 40px;
-    }
-    nav .menu ul li a {
-        color: #333;
-    }
-    .tombol-menu {
-        display: flex;
-    }
-    .blog .area {
-        display: block;
-    }
-    .blog div.area div {
-        width: 100%;
-    }
-    .blog .area .gambar {
-        border-radius: 5px 5px 0px 0px;
-        height: 200px;
-    }
+
+    /* Support */
     .support {
-        display: block;
+        flex-direction: column;
+        align-items: center;
     }
     .support div {
-        width: 100%;
+        width: 80%;
         padding-bottom: 30px;
+    }
+
+    /* Tim */
+    .tim {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .tim div {
+        width: 45%;
+    }
+
+    /* Gallery */
+    section#gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Footer */
+    footer .layar-dalam {
+        flex-direction: column;
+    }
+    footer .layar-dalam div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Quote */
+    section.quote {
+        padding: 60px 20px;
+        background-attachment: scroll;
     }
 }

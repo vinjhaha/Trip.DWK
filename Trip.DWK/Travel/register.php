@@ -3,10 +3,10 @@ include "koneksi.php";
 
 if(isset($_POST['register'])){
 
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    mysqli_query($conn, "INSERT INTO users VALUES('', '$email', '$password')");
+    mysqli_query($conn, "INSERT INTO users (username, password) VALUES('$username', '$password')");
 
     header("Location: login.php");
 }
@@ -30,6 +30,10 @@ body{
     align-items:center;
     height:100vh;
     background:#dedede;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('asset/pexels-rizk-nas-1463375-3290667.jpg');
 }
 
 .box{
@@ -68,7 +72,7 @@ body{
 
 <form method="POST">
 
-<input type="email" name="email" placeholder="Email" required>
+<input type="username" name="username" placeholder="Username" required>
 
 <input type="password" name="password" placeholder="Password" required>
 

@@ -1,55 +1,47 @@
-//menu
-var tombolMenu = $(".tombol-menu");
-var menu = $("nav .menu ul"); 
+// ===================== NAVBAR SCROLL =====================
+const navbar = document.getElementById('navbar');
 
-function klikMenu() {
-    tombolMenu.click(function () {
-        menu.toggle();
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// ===================== HAMBURGER MENU =====================
+const tombolMenu = document.getElementById('tombolMenu');
+const menuList = document.getElementById('menuList');
+
+tombolMenu.addEventListener('click', function (e) {
+    e.preventDefault();
+    menuList.classList.toggle('aktif');
+});
+
+// Tutup menu saat link diklik
+const menuLinks = document.querySelectorAll('#menuList a');
+menuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+        menuList.classList.remove('aktif');
     });
-    menu.click(function() {
-        menu.toggle();
-    });
+});
+
+// ===================== SLIDESHOW =====================
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
 }
 
-$(document).ready(function (){
-    var width = $(window).width();
-    if (width < 990){
-        klikMenu();
-    }
-});
+function nextSlide() {
+    let next = (currentSlide + 1) % slides.length;
+    goToSlide(next);
+}
 
-//check lebar
-$(window).resize(function(){
-    var width = $(window).width();
-    if(width > 989){
-        menu.css("display", "block");
-    }else{
-        menu.css("display", "none");
-    }
-    klikMenu();
-});
-
-//efek scroll
-window.addEventListener("scroll", function(){
-    var scroll_pos = window.scrollY;
-    if(scroll_pos > 0){
-        document.querySelector("nav").classList.add("Putih");
-        $("nav img.Hitam").show();
-        $("nav img.Putih").hide();
-    } else {
-        document.querySelector("nav").classList.remove("Putih");
-        $("nav img.Hitam").hide();
-        $("nav img.Putih").show();
-    }
-});
-
-// smooth scroll menu
-$(document).ready(function(){
-    $("nav .menu ul li a").click(function(e){
-        e.preventDefault();
-        var target = $(this).attr("href");
-        $("html, body").animate({
-            scrollTop: $(target).offset().top - 80
-        }, 800);
-    });
-});
+setInterval(nextSlide, 3000);
